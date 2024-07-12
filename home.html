@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drivers For Drivers</title>
+    <link rel="stylesheet"  href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Drivers For Drivers</h1>
+    </header>
+    <main>
+        <section id="map-section">
+            <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=22.32421875%2C-53.27835301753182%2C112.85156250000001%2C11.092165893502013&amp;layer=mapnik" style="border: 1px solid black"></iframe>
+            <br/><small><a href="https://www.openstreetmap.org/#map=4/-25.17/67.59">Ver mapa ampliado</a></small>
+        </section>
+        <section id="info-section">
+            <div class="user-info">
+                <img src="./assets/img/Servico-de-Motorista-3-1.jpg" alt="Foto do Motorista">
+                <p>Nome do Motorista</p>
+                <p>Avaliação: 5/5</p>
+            </div>
+            <div class="user-info">
+                <img src="./assets/img/carona.jpg" alt="Passageiros">
+                <p>Nome do Passageiro</p>
+                <p>Avaliação: 5/5</p>
+            </div>
+        </section>
+        <section id="search-section">
+            <input type="text" id="pickup-location" placeholder="Endereço de Embarque">
+            <input type="text" id="dropoff-location" placeholder="Endereço de Desembarque">
+            <button onclick="calculatePrice()">Calcular Preço</button>
+            <p id="price-output"></p>
+        </section>
+    </main>
+    <footer>
+        <button onclick="showModal('loginModal')">Login</button>
+        <button onclick="showModal('registerModal')">Cadastre-se</button>
+    </footer>
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="text" id="loginRg" placeholder="RG" required>
+                <input type="password" id="loginPassword" placeholder="Senha" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Cadastro -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2>Cadastro</h2>
+            <form id="registerForm">
+                <input type="text" id="registerRg" placeholder="RG" required>
+                <input type="text" id="registerPhone" placeholder="Telefone com DDD" required>
+                <input type="text" id="registerAddress" placeholder="Endereço Residencial" required>
+                <input type="text" id="registerWorkAddress" placeholder="Endereço do Trabalho" required>
+                <input type="password" id="registerPassword" placeholder="Senha" required>
+                <input type="file" id="registerPhoto" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
