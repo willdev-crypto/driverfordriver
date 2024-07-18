@@ -1,6 +1,4 @@
-Para criar um README básico para o projeto "Drivers For Drivers", você pode seguir um formato que forneça informações essenciais sobre o projeto, sua finalidade, como instalá-lo e usá-lo, e outras informações relevantes. Aqui está um exemplo de como poderia ser estruturado:
 
----
 
 # Drivers For Drivers
 
