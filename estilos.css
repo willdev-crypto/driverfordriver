@@ -107,3 +107,11 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
+
+.hash-left-top {
+    position:absolute; /* Fixa a imagem no topo da página */
+    top: 20; /* Define a posição no topo */
+    left: 0; /* Define a posição à esquerda */
+    margin: 10px; /* Espaço ao redor da imagem */
+}
+
