@@ -45,4 +45,5 @@ Drivers For Drivers é uma aplicação para caronas solidárias e serviços de t
 ## Contribuições
 
 Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests ou reportar problemas.
+Estaremos em constante atualizações.
 
