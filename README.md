@@ -2,7 +2,7 @@
 
 # Drivers For Drivers
 
-Drivers For Drivers é uma aplicação para caronas solidárias e serviços de transporte, desenvolvida para facilitar o compartilhamento de viagens entre motoristas e passageiros.
+Drivers For Drivers é uma aplicação para caronas solidárias e serviços de transporte, desenvolvida para facilitar o compartilhamento de viagens entre motoristas e passageiros do Brasil inteiro.
 
 ## Funcionalidades
 
