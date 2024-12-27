@@ -3,42 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Drivers For Drivers - O melhor custo-benefício em transporte.">
     <title>Drivers For Drivers</title>
-    <link rel="stylesheet"  href="estilos.css">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
 </head>
 <body>
     <header>
         <h1>Drivers For Drivers</h1>
-        
     </header>
+
     <main>
-        
+        <!-- Informações sobre os serviços -->
         <section id="info-section">
             <div class="user-info">
-                <img src="./assets/img/Servico-de-Motorista-3-1.jpg" alt="Foto do Motorista">
+                <img src="./assets/img/Servico-de-Motorista-3-1.jpg" alt="Imagem representando o motorista">
                 <p>O MELHOR CUSTO BENEFÍCIO</p>
                 <p>Avaliação: 5/5</p>
             </div>
             <div class="user-info">
-                <img src="./assets/img/carona.jpg" alt="Passageiros">
+                <img src="./assets/img/carona.jpg" alt="Imagem representando passageiros">
                 <p>SERVIÇOS PREMIUM</p>
                 <p>Avaliação: 5/5</p>
             </div>
-        </section><a id="hash" href=https://autohashmining.com/?ref=INFOCOIN><img class="hash-left-top"  src="https://autohashmining.com/images/autohashmining-160.gif"/></a>
+        </section>
+
+        <!-- Seção de cálculo de preço -->
         <section id="search-section">
-            <input type="text" id="pickup-location" placeholder="Endereço de Embarque">
-            <input type="text" id="dropoff-location" placeholder="Endereço de Desembarque">
-            <button onclick="calculatePrice()">Calcular Preço</button>
+            <form id="price-form" onsubmit="calculatePrice(event)">
+                <input type="text" id="pickup-location" placeholder="Endereço de Embarque" required>
+                <input type="text" id="dropoff-location" placeholder="Endereço de Desembarque" required>
+                <button type="submit">Calcular Preço</button>
+            </form>
             <p id="price-output"></p>
         </section>
+
+        <!-- Mapa -->
+        <section id="map-section">
+            <iframe 
+                width="425" 
+                height="350" 
+                src="https://www.openstreetmap.org/export/embed.html?bbox=22.32421875%2C-53.27835301753182%2C112.85156250000001%2C11.092165893502013&amp;layer=mapnik" 
+                title="Mapa do Serviço" 
+                style="border: 1px solid black"></iframe>
+            <br>
+            <small><a href="https://www.openstreetmap.org/#map=4/-25.17/67.59" target="_blank" rel="noopener noreferrer">Ver mapa ampliado</a></small>
+        </section>
     </main>
+
     <footer>
         <button onclick="showModal('loginModal')">Login</button>
         <button onclick="showModal('registerModal')">Cadastre-se</button>
     </footer>
 
     <!-- Modal de Login -->
-    <div id="loginModal" class="modal">
+    <div id="loginModal" class="modal" aria-hidden="true">
         <div class="modal-content">
             <span class="close" onclick="closeModal('loginModal')">&times;</span>
             <h2>Login</h2>
@@ -51,7 +70,7 @@
     </div>
 
     <!-- Modal de Cadastro -->
-    <div id="registerModal" class="modal">
+    <div id="registerModal" class="modal" aria-hidden="true">
         <div class="modal-content">
             <span class="close" onclick="closeModal('registerModal')">&times;</span>
             <h2>Cadastro</h2>
@@ -61,25 +80,23 @@
                 <input type="text" id="registerAddress" placeholder="Endereço Residencial" required>
                 <input type="text" id="registerWorkAddress" placeholder="Endereço do Trabalho" required>
                 <input type="password" id="registerPassword" placeholder="Senha" required>
-                <input type="file" id="registerPhoto" required>
+                <input type="file" id="registerPhoto" accept="image/*" required>
                 <button type="submit">Cadastrar</button>
             </form>
         </div>
-    </div> <br>
-    <section id="map-section">
-            <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=22.32421875%2C-53.27835301753182%2C112.85156250000001%2C11.092165893502013&amp;layer=mapnik" style="border: 1px solid black"></iframe>
-            <br/><small><a href="https://www.openstreetmap.org/#map=4/-25.17/67.59">Ver mapa ampliado</a></small>
-        </section>
-        <br>
-        <a href=https://autohashmining.com/?ref=INFOCOIN><img src="https://autohashmining.com/images/autohashmining-728.gif"/></a>
+    </div>
 
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Links para anúncios -->
+    <section id="ads">
+        <a href="https://autohashmining.com/?ref=INFOCOIN" target="_blank" rel="noopener noreferrer">
+            <img src="https://autohashmining.com/images/autohashmining-160.gif" alt="Publicidade de mineração de criptomoedas">
+        </a>
+        <a href="https://autohashmining.com/?ref=INFOCOIN" target="_blank" rel="noopener noreferrer">
+            <img src="https://autohashmining.com/images/autohashmining-728.gif" alt="Publicidade de mineração de criptomoedas">
+        </a>
+    </section>
+
+    <!-- Scripts -->
     <script src="script.js" defer></script>
-    <br>
-    <a id="lado" href=https://autohashmining.com/?ref=INFOCOIN><img src="https://autohashmining.com/images/autohashmining-468.gif"/></a>
-
-
-    
-
 </body>
 </html>
