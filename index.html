@@ -1,20 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Drivers For Drivers - O melhor custo-benefício em transporte.">
-    <title>Drivers For Drivers</title>
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Drivers For Drivers - O melhor custo-benefício em transporte.">
+        <title>Drivers For Drivers</title>
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"> <!-- Fonte Roboto Bold -->
+    </head>
 <body>
     <header>
         <h1>Drivers For Drivers</h1>
+        <div class="carousel">
+            <img src="./assets/img/header2.jpg" alt="Imagem 1" class="carousel-img">
+            <img src="./assets/img/logoheader.jpg" alt="Imagem 2" class="carousel-img">
+            <img src="./assets/img/header1.jpg" alt="Imagem 3" class="carousel-img">
+            <img src="./assets/img/header3.jpg" alt="Imagem 4" class="carousel-img">
+            <img src="./assets/img/header4.jpg" alt="Imagem 5" class="carousel-img">
+            <img src="./assets/img/header5.jpg" alt="Imagem 6" class="carousel-img">
+            <img src="./assets/img/header6.jpg" alt="Imagem 7" class="carousel-img">
+            <img src="./assets/img/header7.jpg" alt="Imagem 8" class="carousel-img">
+            <img src="./assets/img/header8.jpg" alt="Imagem 9" class="carousel-img">
+            <img src="./assets/img/header9.jpg" alt="Imagem 9" class="carousel-img">
+            <img src="./assets/img/header10.jpg" alt="Imagem 10" class="carousel-img">
+            <img src="./assets/img/header11.jpg" alt="Imagem 11" class="carousel-img">
+            <img src="./assets/img/header1.jpg" alt="Imagem 12" class="carousel-img">
+            <img src="./assets/img/header3.jpg" alt="Imagem 13" class="carousel-img">
+            <!-- Duplicação das imagens -->
+            <img src="./assets/img/header2.jpg" alt="Imagem 1" class="carousel-img">
+            <img src="./assets/img/logoheader.jpg" alt="Imagem 2" class="carousel-img">
+            <img src="./assets/img/header1.jpg" alt="Imagem 3" class="carousel-img">
+            <img src="./assets/img/header3.jpg" alt="Imagem 4" class="carousel-img">
+            <img src="./assets/img/header4.jpg" alt="Imagem 5" class="carousel-img">
+            <img src="./assets/img/header5.jpg" alt="Imagem 6" class="carousel-img">
+            <img src="./assets/img/header6.jpg" alt="Imagem 7" class="carousel-img">
+            <img src="./assets/img/header7.jpg" alt="Imagem 8" class="carousel-img">
+            <img src="./assets/img/header8.jpg" alt="Imagem 9" class="carousel-img">
+            <img src="./assets/img/header9.jpg" alt="Imagem 9" class="carousel-img">
+            <img src="./assets/img/header10.jpg" alt="Imagem 10" class="carousel-img">
+            <img src="./assets/img/header11.jpg" alt="Imagem 11" class="carousel-img">
+            <img src="./assets/img/header1.jpg" alt="Imagem 12" class="carousel-img">
+            <img src="./assets/img/header3.jpg" alt="Imagem 13" class="carousel-img">
+        </div>
     </header>
 
     <main>
-        <!-- Informações sobre os serviços -->
         <section id="info-section">
             <div class="user-info">
                 <img src="./assets/img/Servico-de-Motorista-3-1.jpg" alt="Imagem representando o motorista">
@@ -28,7 +59,6 @@
             </div>
         </section>
 
-        <!-- Seção de cálculo de preço -->
         <section id="search-section">
             <form id="price-form" onsubmit="calculatePrice(event)">
                 <input type="text" id="pickup-location" placeholder="Endereço de Embarque" required>
@@ -42,7 +72,6 @@
         <section id="map-section">
             <div id="map" style="width: 100%; height: 350px; border: 1px solid black;"></div>
         </section>
-        
     </main>
 
     <footer>
@@ -84,12 +113,30 @@
         <a href="https://autohashmining.com/?ref=INFOCOIN" target="_blank" rel="noopener noreferrer">
             <img src="https://autohashmining.com/images/autohashmining-160.gif" alt="Publicidade de mineração de criptomoedas">
         </a>
+    </section>
+    <section id="ads-right">
+        <a href="https://autohashmining.com/?ref=INFOCOIN">
+          <img src="https://autohashmining.com/images/autohashmining-160.gif" alt="Publicidade de mineração de criptomoedas">
+        </a>
+      </section>
+    <footer id="footer-ads">
         <a href="https://autohashmining.com/?ref=INFOCOIN" target="_blank" rel="noopener noreferrer">
             <img src="https://autohashmining.com/images/autohashmining-728.gif" alt="Publicidade de mineração de criptomoedas">
         </a>
-    </section>
-
+    </footer>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const carousel = document.querySelector('.carousel');
+          const images = document.querySelectorAll('.carousel-img');
+          let index = 0;
+      
+          setInterval(() => {
+            index = (index + 1) % images.length;
+            carousel.style.transform = `translateX(${-index * 100}%)`;
+          }, 5000); // Muda a imagem a cada 5 segundos
+        });
+      </script> 
 </body>
 </html>

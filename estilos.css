@@ -1,159 +1,210 @@
 body {
-    background-color: #020925; /* Fundo escuro */
-    font-family: Arial, sans-serif; /* Fonte limpa e legível */
-    color: white; /* Texto claro para contraste */
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #78ace4; /* Cor de destaque para o cabeçalho */
-    padding: 10px 0;
-  }
-  
-  h1 {
-    margin: 0;
-  }
-  
-  /* Estilo principal */
+  background-color: #2d3e81;
+  font-family: Arial, sans-serif; 
+  color: white; 
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column;
+}
+
+header {
+  background-color: #204b79; 
+  padding: 0; 
+  position: relative;
+  overflow: hidden; 
+  width: 100vw; 
+  height: 100px; 
+}
+
+.carousel {
+  display: flex;
+  width: calc(100px * 26); 
+  height: 100%; 
+  animation: slide 30s linear infinite; 
+}
+
+.carousel-img {
+  width: 100px; 
+  height: 100%; 
+  flex-shrink: 0; 
+  object-fit: cover; 
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-2600px); } 
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif; 
+  font-weight: 700; 
+  font-size: 1.5em; 
+  color: #ffffff; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  margin: 0;
+  padding: 10px 0;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  gap: 20px;
+  padding-bottom: 60px; 
+}
+
+.map-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-info {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+  max-width: 200px; 
+}
+
+.user-info img {
+  width: 100px; 
+  height: 100px;
+  border-radius: 50%; 
+  object-fit: cover; 
+}
+
+#search-section {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+input {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+  width: calc(100% - 40px);
+  max-width: 300px; 
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745; 
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px; 
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); 
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #e2e0eb; 
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  color: black;
+  border-radius: 10px; 
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.hash-left-top {
+  position: absolute; 
+  top: 20px; 
+  left: 0; 
+  margin: 10px; 
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
   main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-    gap: 20px; /* Espaçamento consistente entre seções */
+    gap: 15px; 
   }
-  
-  .map-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .user-info {
-    display: inline-block;
-    margin: 10px;
-    text-align: center;
-    max-width: 200px; /* Limita a largura para evitar esticar imagens ou texto */
-  }
-  
-  .user-info img {
-    width: 100px; /* Tamanho fixo para imagens do perfil */
-    height: 100px;
-    border-radius: 50%; /* Forma circular */
-    object-fit: cover; /* Garante que a imagem se encaixe bem no círculo */
-  }
-  
-  #search-section {
-    margin-top: 20px;
-    text-align: center;
-    width: 100%;
-  }
-  
+
   input {
-    padding: 10px;
-    margin: 5px;
-    border: 1px solid #ccc; /* Borda leve para destaque */
-    border-radius: 5px;
-    width: calc(100% - 40px); /* Ajusta largura sem quebrar layout */
-    max-width: 300px; /* Limita o tamanho para telas maiores */
-    box-sizing: border-box; /* Inclui padding na largura total */
+    width: calc(100% - 20px); 
+    max-width: 100%; 
   }
-  
-  button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #28a745; /* Cor de botão chamativa */
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Animação suave ao hover */
-  }
-  
-  button:hover {
-    background-color: #218838; /* Cor ao passar o mouse */
-  }
-  
-  footer {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px; /* Espaço entre os botões */
-  }
-  
-  /* Estilos para Modal */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4); /* Fundo escuro com transparência */
-    padding-top: 60px;
-  }
-  
+
   .modal-content {
-    background-color: #e2e0eb; /* Fundo claro para modal */
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    color: black;
-    border-radius: 10px; /* Cantos arredondados */
+    width: 90%; 
   }
-  
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+
+  .user-info img {
+    width: 80px; 
+    height: 80px;
   }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  /* Estilo para imagem flutuante no topo */
-  .hash-left-top {
-    position: absolute; /* Fixa a imagem no topo da página */
-    top: 20px; /* Posição do topo */
-    left: 0; /* Posição à esquerda */
-    margin: 10px; /* Espaçamento ao redor da imagem */
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    main {
-      gap: 15px; /* Ajusta o espaçamento em telas menores */
-    }
-  
-    input {
-      width: calc(100% - 20px); /* Garante ajuste perfeito em telas menores */
-      max-width: 100%; /* Usa toda a largura disponível */
-    }
-  
-    .modal-content {
-      width: 90%; /* Ajusta tamanho do modal */
-    }
-  
-    .user-info img {
-      width: 80px; /* Ajusta tamanho das imagens de perfil */
-      height: 80px;
-    }
-  }
-  
-  #map-section{
-    
-        height: 350px; /* Aumente a altura, se necessário */
-    
-    width: 50%; /* Largura completa */
-  }
-  
+}
+
+#map-section {
+  height: 350px; 
+  width: 50%; 
+}
+
+#ads {
+  position: absolute;
+  top: 100px; 
+  left: 0; 
+}
+
+#footer-ads {
+  position: relative; 
+  bottom: 0; 
+  left: 0; 
+  width: 100%; 
+  text-align: left; 
+  background-color: transparent; 
+  z-index: 1000; 
+}
+#ads-right {
+  position: absolute;
+  top: 100px;
+  right: 0; 
+}
